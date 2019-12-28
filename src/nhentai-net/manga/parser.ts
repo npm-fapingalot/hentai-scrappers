@@ -19,7 +19,7 @@ export const getPages = ($: CheerioStatic): IContent[] =>
     .filter(isSomething)
     .map((thumbnailURL) => ({
       thumbnailURL,
-      conetntURL: [
+      contentURL: [
         thumbnailURL
           .replace(/t\.png$/, '.png')
           .replace(/t\.jpg$/, '.jpg')

@@ -18,7 +18,7 @@ export default ($: CheerioStatic): IPrevPost[] => {
     return {
       id,
       content: {
-        conetntURL: [
+        contentURL: [
           el.attr('data-file-url'),
           el.attr('data-source'),
           el.attr('data-large-file-url'),
@@ -26,5 +26,5 @@ export default ($: CheerioStatic): IPrevPost[] => {
         ].filter(isDefined) // Remove undefinded
       },
     } as IPrevPost;
-  }).get().filter(({ content: { conetntURL } }) => conetntURL.length !== 0); // Remove empty
+  }).get().filter(({ content: { contentURL } }) => contentURL.length !== 0); // Remove empty
 };

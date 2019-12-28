@@ -6,7 +6,7 @@ import { IContent, IID } from '../../schema.base';
  */
 export interface IPrevPost extends IID<ID> {
   /**
-   * The image conetnt
+   * The image content
    */
   content: IContent;
 }

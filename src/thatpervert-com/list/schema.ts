@@ -11,7 +11,7 @@ export interface IPrevPost extends IID<ID> {
   tags: ITag[];
 
   /**
-   * The image conetnt
+   * The image content
    */
   content: IContent[] | IContent;
 }

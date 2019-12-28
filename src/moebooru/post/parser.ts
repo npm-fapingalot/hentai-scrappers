@@ -6,14 +6,14 @@ import { IContent, ITagged, ITag, IStdTaging } from '../../schema.base';
 // SELECTOR
 export const getPages = ($: CheerioStatic): IContent[] =>
   [{
-    conetntURL: [
+    contentURL: [
       ...$(SELECTOR.VIDEO).map((e, el) => $(el).attr('src')).get(),
       $(SELECTOR.ORIGINAL).attr('href'),
       $(SELECTOR.HIGH_RES).attr('href'),
       $(SELECTOR.HIGH_RES_SHOW).attr('href'),
       $(SELECTOR.PREVIEW).attr('src'),
     ].filter(isDefined) // Remove undefinded
-  }].filter(({ conetntURL }) => conetntURL.length !== 0); // Remove empty
+  }].filter(({ contentURL }) => contentURL.length !== 0); // Remove empty
 
 
 export const getTags = ($: CheerioStatic): IStdTaging => {

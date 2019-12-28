@@ -26,7 +26,7 @@ export const getPages = ($: CheerioStatic): IContent[] =>
     .filter((val) => !isEmpty(val))
     .map((imgURL: string) => ({
       thumbnailURL: injectIntoPageURL(imgURL),
-      conetntURL: [imgURL],
+      contentURL: [imgURL],
     }));
 
 export const getTags = ($: CheerioStatic): IStdTaging => {

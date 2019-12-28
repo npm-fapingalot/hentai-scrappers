@@ -9,7 +9,7 @@ export const getPages = ($: CheerioStatic): IContent[] =>
     const el = $(elRaw);
 
     return {
-      conetntURL: [
+      contentURL: [
         el.find(SELECTOR.LINK_PHOTO).attr('href'),
         el.find(SELECTOR.GIF).attr('href'),
 
@@ -18,7 +18,7 @@ export const getPages = ($: CheerioStatic): IContent[] =>
       ].filter(isDefined) // Remove undefinded
     } as IContent;
   }).get()
-    .filter(({ conetntURL }) => conetntURL.length !== 0); // Remove empty
+    .filter(({ contentURL }) => contentURL.length !== 0); // Remove empty
 
 export const getTags = ($: CheerioStatic): IStdTaging => ({
   tags: $(SELECTOR.TAG)

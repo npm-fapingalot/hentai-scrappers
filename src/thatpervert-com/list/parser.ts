@@ -19,12 +19,12 @@ export const getTags = ($: CheerioStatic, el: Cheerio): ITag[] =>
     } as ITag;
   }).get();
 
-export const getConetnt = ($: CheerioStatic, pEl: Cheerio): IContent[] =>
+export const getcontent = ($: CheerioStatic, pEl: Cheerio): IContent[] =>
   pEl.find(SELECTOR.POST_CONTENT).map((_, elRaw) => {
     const el = $(elRaw);
 
     return {
-      conetntURL: [
+      contentURL: [
         el.find(P_SELECTOR.LINK_PHOTO).attr('href'),
         el.find(P_SELECTOR.GIF).attr('href'),
 
@@ -33,7 +33,7 @@ export const getConetnt = ($: CheerioStatic, pEl: Cheerio): IContent[] =>
       ].filter(isDefined) // Remove undefinded
     } as IContent;
   }).get()
-    .filter(({ conetntURL }) => conetntURL.length !== 0); // Remove empty
+    .filter(({ contentURL }) => contentURL.length !== 0); // Remove empty
 
 // Main parsers
 export default ($: CheerioStatic): IPrevPost[] => {
@@ -43,7 +43,7 @@ export default ($: CheerioStatic): IPrevPost[] => {
     const id = getID(el);
     if (isUndefined(id)) { throw new Error('Invalid id: ' + id); }
 
-    const content = getConetnt($, el);
+    const content = getcontent($, el);
     if (!content.length) { throw new Error('There is no content'); }
 
     return {

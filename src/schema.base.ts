@@ -10,7 +10,7 @@ export interface ITagged {
 
 // Data
 export interface IContent {
-  conetntURL: string[];
+  contentURL: string[];
   thumbnailURL?: string;
 }
 
